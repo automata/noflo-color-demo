@@ -3,7 +3,7 @@
         "name": "main",
         "environment": {
             "type": "noflo-browser",
-            "content": "<style>\n  html {\n    height: 100%;\n  }\n  body {\n    width: 98%;\n    min-height: 100%;\n    background-color: #000;\n    color: #fff;\n    font-family: sans-serif;\n  }\n  a {\n    float: right;\n  }\n</style>\n\n<canvas id=\"colors\"></canvas>\n<canvas id=\"img\"></canvas>\n<p>Color palette creator. Drop image files here.</p>"
+            "content": "<style>\n  html {\n    height: 100%;\n  }\n  body {\n    width: 98%;\n    min-height: 100%;\n    background-color: #000;\n    color: #fff;\n    font-family: sans-serif;\n  }\n  a {\n    float: right;\n  }\n</style>\n<p>Color palette extractor. Drop image files here...</p>\n<div id=\"palette\"></div>\n<canvas id=\"colors\"></canvas>\n<canvas id=\"img\"></canvas>"
         },
         "icon": ""
     },
@@ -478,19 +478,6 @@
             }
         },
         {
-            "src": {
-                "process": "image/UrlToCanvas_gzawh",
-                "port": "canvas"
-            },
-            "tgt": {
-                "process": "canvas/DrawImage_3ctrq",
-                "port": "image"
-            },
-            "metadata": {
-                "route": 3
-            }
-        },
-        {
             "data": "dragover",
             "tgt": {
                 "process": "ListenDragOver",
@@ -596,24 +583,10 @@
             }
         },
         {
-            "data": 6,
-            "tgt": {
-                "process": "canvas/MakeRange_7251d",
-                "port": "count"
-            }
-        },
-        {
             "data": 20,
             "tgt": {
                 "process": "canvas/MakeRange_7251d",
                 "port": "from"
-            }
-        },
-        {
-            "data": 200,
-            "tgt": {
-                "process": "canvas/MakeRange_7251d",
-                "port": "to"
             }
         },
         {
@@ -638,6 +611,20 @@
             "tgt": {
                 "process": "dom/GetElement_k4he7",
                 "port": "selector"
+            }
+        },
+        {
+            "data": "5",
+            "tgt": {
+                "process": "canvas/MakeRange_7251d",
+                "port": "count"
+            }
+        },
+        {
+            "data": "300",
+            "tgt": {
+                "process": "canvas/MakeRange_7251d",
+                "port": "to"
             }
         }
     ]
