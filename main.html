@@ -16,18 +16,18 @@
   body {
     width: 98%;
     min-height: 100%;
-    background-color: #000;
-    color: #fff;
+    background-color: #eee;
+    color: #000;
     font-family: sans-serif;
   }
-  a {
+  a, a:visited {
     float: right;
+    color: #000;
   }
 </style>
 <p>Color palette extractor. Drop image files here...</p>
-<div id="palette"></div>
-<canvas id="colors"></canvas>
-<canvas id="img"></canvas>
+<canvas id="colors" width="320"></canvas>
+
     <script>
       var noflo = require('noflo');
       var webrtcRuntime = require('noflo-runtime-webrtc');
