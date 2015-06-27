@@ -3,7 +3,7 @@
         "name": "main",
         "environment": {
             "type": "noflo-browser",
-            "content": "<style>\n  html {\n    height: 100%;\n  }\n  body {\n    width: 98%;\n    min-height: 100%;\n    background-color: #000;\n    color: #fff;\n    font-family: sans-serif;\n  }\n  a {\n    float: right;\n  }\n</style>\n\n<canvas id=\"colors\"></canvas>\n\n<p>Color palette creator. Drop image files here.</p>"
+            "content": "<style>\n  html {\n    height: 100%;\n  }\n  body {\n    width: 98%;\n    min-height: 100%;\n    background-color: #000;\n    color: #fff;\n    font-family: sans-serif;\n  }\n  a {\n    float: right;\n  }\n</style>\n\n<canvas id=\"colors\"></canvas>\n<canvas id=\"img\"></canvas>\n<p>Color palette creator. Drop image files here.</p>"
         },
         "icon": ""
     },
@@ -202,6 +202,36 @@
                 "label": "dom/GetElement",
                 "x": 1224,
                 "y": 36,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "canvas/Draw_srboq": {
+            "component": "canvas/Draw",
+            "metadata": {
+                "label": "canvas/Draw",
+                "x": 1332,
+                "y": 504,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "dom/GetElement_k4he7": {
+            "component": "dom/GetElement",
+            "metadata": {
+                "label": "dom/GetElement",
+                "x": 1332,
+                "y": 396,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "canvas/DrawImage_3ctrq": {
+            "component": "canvas/DrawImage",
+            "metadata": {
+                "label": "canvas/DrawImage",
+                "x": 1188,
+                "y": 504,
                 "width": 72,
                 "height": 72
             }
@@ -417,7 +447,48 @@
                 "process": "canvas/Draw_wpm3i",
                 "port": "canvas"
             },
-            "metadata": {}
+            "metadata": {
+                "route": 4
+            }
+        },
+        {
+            "src": {
+                "process": "dom/GetElement_k4he7",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "canvas/Draw_srboq",
+                "port": "canvas"
+            },
+            "metadata": {
+                "route": 3
+            }
+        },
+        {
+            "src": {
+                "process": "canvas/DrawImage_3ctrq",
+                "port": "drawimage"
+            },
+            "tgt": {
+                "process": "canvas/Draw_srboq",
+                "port": "commands"
+            },
+            "metadata": {
+                "route": 5
+            }
+        },
+        {
+            "src": {
+                "process": "image/UrlToCanvas_gzawh",
+                "port": "canvas"
+            },
+            "tgt": {
+                "process": "canvas/DrawImage_3ctrq",
+                "port": "image"
+            },
+            "metadata": {
+                "route": 3
+            }
         },
         {
             "data": "dragover",
@@ -476,34 +547,6 @@
             }
         },
         {
-            "data": 0,
-            "tgt": {
-                "process": "canvas/MakePoint_wvr3t",
-                "port": "y"
-            }
-        },
-        {
-            "data": 0,
-            "tgt": {
-                "process": "canvas/MakeRange_7251d",
-                "port": "from"
-            }
-        },
-        {
-            "data": 640,
-            "tgt": {
-                "process": "canvas/MakeRange_7251d",
-                "port": "to"
-            }
-        },
-        {
-            "data": 5,
-            "tgt": {
-                "process": "canvas/MakeRange_7251d",
-                "port": "count"
-            }
-        },
-        {
             "data": 20,
             "tgt": {
                 "process": "canvas/MakeCircle_3uq12",
@@ -543,6 +586,58 @@
             "tgt": {
                 "process": "canvas/Draw_wpm3i",
                 "port": "drawevery"
+            }
+        },
+        {
+            "data": 20,
+            "tgt": {
+                "process": "canvas/MakePoint_wvr3t",
+                "port": "y"
+            }
+        },
+        {
+            "data": 6,
+            "tgt": {
+                "process": "canvas/MakeRange_7251d",
+                "port": "count"
+            }
+        },
+        {
+            "data": 20,
+            "tgt": {
+                "process": "canvas/MakeRange_7251d",
+                "port": "from"
+            }
+        },
+        {
+            "data": 200,
+            "tgt": {
+                "process": "canvas/MakeRange_7251d",
+                "port": "to"
+            }
+        },
+        {
+            "data": {
+                "x": 0,
+                "y": 0
+            },
+            "tgt": {
+                "process": "canvas/DrawImage_3ctrq",
+                "port": "destpoint"
+            }
+        },
+        {
+            "data": true,
+            "tgt": {
+                "process": "canvas/Draw_srboq",
+                "port": "drawevery"
+            }
+        },
+        {
+            "data": "#img",
+            "tgt": {
+                "process": "dom/GetElement_k4he7",
+                "port": "selector"
             }
         }
     ]
