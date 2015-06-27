@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>main</title>
     <script src="http://cdn.rawgit.com/rtc-io/rtc/v3.1.1/dist/rtc.js"></script>
-    <script src="noflo-feature-demo.js"></script>
+    <script src="noflo-color-demo.js"></script>
     <script src="./noflo-noflo-runtime-iframe/runtime/network.js"></script>
   </head>
   <body>
@@ -38,8 +38,8 @@
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
 
-      noflo.graph.loadJSON(require('noflo-feature-demo/graphs/main.json'), function (graph) {
-        graph.baseDir = '/noflo-feature-demo';
+      noflo.graph.loadJSON(require('noflo-color-demo/graphs/main.json'), function (graph) {
+        graph.baseDir = '/noflo-color-demo';
 
         var queryProtocol = getParameterByName('fbp_protocol');
         var queryAddress = getParameterByName('fbp_address');
