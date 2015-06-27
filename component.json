@@ -22,17 +22,14 @@
   ],
   "scripts": [
     "index.js",
-    "graphs/main.json",
-    "graphs/DuplicateCanvas.json"
+    "graphs/main.json"
   ],
   "json": [
     "graphs/main.json",
-    "graphs/DuplicateCanvas.json",
     "component.json"
   ],
   "noflo": {
     "graphs": {
-      "DuplicateCanvas": "graphs/DuplicateCanvas.json",
       "main": "graphs/main.json"
     }
   }
