@@ -1,8 +1,8 @@
 {
-  "name": "noflo-feature-demo",
-  "description": "Generates a Delaunay triangulation for a given image.",
-  "author": "Forrest Oliphant <forrest@sembiki.com>, Vilson Vieira <vilson@void.cc>",
-  "repo": "automata/noflo-feature-demo",
+  "name": "noflo-color-demo",
+  "description": "Extracts the color palette of a given image.",
+  "author": "Vilson Vieira <vilson@void.cc>",
+  "repo": "automata/noflo-color-demo",
   "version": "0.1.0",
   "keywords": [],
   "dependencies": {

@@ -1,3 +1,3 @@
-# noflo-feature-demo [![Build Status](https://secure.travis-ci.org/automata/noflo-feature-demo.png?branch=master)](http://travis-ci.org/automata/noflo-feature-demo)
+# noflo-color-demo [![Build Status](https://secure.travis-ci.org/automata/noflo-color-demo.png?branch=master)](http://travis-ci.org/automata/noflo-color-demo)
 
-Generates a Delaunay triangulation for a given image.
+Extracts the color palette of a given image.
