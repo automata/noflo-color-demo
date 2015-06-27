@@ -3,7 +3,7 @@
         "name": "main",
         "environment": {
             "type": "noflo-browser",
-            "content": "<style>\n  html {\n    height: 100%;\n  }\n  body {\n    width: 98%;\n    min-height: 100%;\n    background-color: #000;\n    color: #fff;\n    font-family: sans-serif;\n  }\n  a {\n    float: right;\n  }\n</style>\n<p>Color palette extractor. Drop image files here...</p>\n<div id=\"palette\"></div>\n<canvas id=\"colors\"></canvas>\n<canvas id=\"img\"></canvas>"
+            "content": "<style>\n  html {\n    height: 100%;\n  }\n  body {\n    width: 98%;\n    min-height: 100%;\n    background-color: #eee;\n    color: #000;\n    font-family: sans-serif;\n  }\n  a, a:visited {\n    float: right;\n    color: #000;\n  }\n</style>\n<p>Color palette extractor. Drop image files here...</p>\n<canvas id=\"colors\" width=\"320\"></canvas>\n"
         },
         "icon": ""
     },
@@ -23,6 +23,48 @@
             "metadata": {
                 "description": ""
             }
+        },
+        {
+            "name": "Draw color palette",
+            "nodes": [
+                "canvas/Draw_wpm3i",
+                "canvas/Fill_rlhig",
+                "canvas/MakeCircle_3uq12",
+                "canvas/MakePoint_wvr3t",
+                "canvas/MakeRange_7251d",
+                "dom/GetElement_xy461"
+            ],
+            "metadata": {
+                "description": ""
+            }
+        },
+        {
+            "name": "Extract colors",
+            "nodes": [
+                "core/Drop_bvj0z",
+                "image/GetColors_tm72h"
+            ],
+            "metadata": {
+                "description": ""
+            }
+        },
+        {
+            "name": "Handle files DnD",
+            "nodes": [
+                "GetBody",
+                "GetDataTransfer",
+                "GetFiles",
+                "GetFirst",
+                "ListenDragOver",
+                "ListenDrop",
+                "browserfile/ReadFile_vkixn",
+                "core/Drop_gnkgq",
+                "core/Split_v8a30",
+                "image/UrlToCanvas_gzawh"
+            ],
+            "metadata": {
+                "description": ""
+            }
         }
     ],
     "processes": {
@@ -30,8 +72,8 @@
             "component": "image/UrlToCanvas",
             "metadata": {
                 "label": "image/UrlToCanvas",
-                "x": 936,
-                "y": 360,
+                "x": 972,
+                "y": 252,
                 "width": 72,
                 "height": 72
             }
@@ -41,7 +83,7 @@
             "metadata": {
                 "label": "browserfile/ReadFile",
                 "x": 828,
-                "y": 360,
+                "y": 252,
                 "width": 72,
                 "height": 72
             }
@@ -50,8 +92,8 @@
             "component": "dom/Listen",
             "metadata": {
                 "label": "ListenDragOver",
-                "x": 288,
-                "y": 468,
+                "x": 324,
+                "y": 432,
                 "width": 72,
                 "height": 72
             }
@@ -61,7 +103,7 @@
             "metadata": {
                 "label": "core/Drop",
                 "x": 432,
-                "y": 504,
+                "y": 432,
                 "width": 72,
                 "height": 72
             }
@@ -70,8 +112,8 @@
             "component": "dom/Listen",
             "metadata": {
                 "label": "ListenDrop",
-                "x": 288,
-                "y": 324,
+                "x": 324,
+                "y": 288,
                 "width": 72,
                 "height": 72
             }
@@ -81,7 +123,7 @@
             "metadata": {
                 "label": "GetDataTransfer",
                 "x": 432,
-                "y": 360,
+                "y": 288,
                 "width": 72,
                 "height": 72
             }
@@ -90,8 +132,8 @@
             "component": "objects/ExtractProperty",
             "metadata": {
                 "label": "GetFiles",
-                "x": 540,
-                "y": 360,
+                "x": 576,
+                "y": 288,
                 "width": 72,
                 "height": 72
             }
@@ -101,7 +143,7 @@
             "metadata": {
                 "label": "GetFirst",
                 "x": 684,
-                "y": 360,
+                "y": 252,
                 "width": 72,
                 "height": 72
             }
@@ -111,7 +153,7 @@
             "metadata": {
                 "label": "GetBody",
                 "x": 36,
-                "y": 432,
+                "y": 324,
                 "width": 72,
                 "height": 72
             }
@@ -120,8 +162,8 @@
             "component": "core/Split",
             "metadata": {
                 "label": "core/Split",
-                "x": 144,
-                "y": 432,
+                "x": 180,
+                "y": 324,
                 "width": 72,
                 "height": 72
             }
@@ -130,8 +172,8 @@
             "component": "image/GetColors",
             "metadata": {
                 "label": "image/GetColors",
-                "x": 1080,
-                "y": 324,
+                "x": 1188,
+                "y": 216,
                 "width": 72,
                 "height": 72
             }
@@ -140,8 +182,8 @@
             "component": "canvas/Draw",
             "metadata": {
                 "label": "canvas/Draw",
-                "x": 1332,
-                "y": 144,
+                "x": 2052,
+                "y": 180,
                 "width": 72,
                 "height": 72
             }
@@ -150,7 +192,7 @@
             "component": "canvas/MakeCircle",
             "metadata": {
                 "label": "canvas/MakeCircle",
-                "x": 1080,
+                "x": 1800,
                 "y": 144,
                 "width": 72,
                 "height": 72
@@ -160,7 +202,7 @@
             "component": "canvas/MakePoint",
             "metadata": {
                 "label": "canvas/MakePoint",
-                "x": 936,
+                "x": 1656,
                 "y": 144,
                 "width": 72,
                 "height": 72
@@ -170,7 +212,7 @@
             "component": "canvas/MakeRange",
             "metadata": {
                 "label": "canvas/MakeRange",
-                "x": 828,
+                "x": 1548,
                 "y": 144,
                 "width": 72,
                 "height": 72
@@ -180,7 +222,7 @@
             "component": "canvas/Fill",
             "metadata": {
                 "label": "canvas/Fill",
-                "x": 1224,
+                "x": 1908,
                 "y": 180,
                 "width": 72,
                 "height": 72
@@ -190,8 +232,8 @@
             "component": "core/Drop",
             "metadata": {
                 "label": "core/Drop",
-                "x": 1224,
-                "y": 324,
+                "x": 1332,
+                "y": 252,
                 "width": 72,
                 "height": 72
             }
@@ -200,38 +242,8 @@
             "component": "dom/GetElement",
             "metadata": {
                 "label": "dom/GetElement",
-                "x": 1224,
+                "x": 1908,
                 "y": 36,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "canvas/Draw_srboq": {
-            "component": "canvas/Draw",
-            "metadata": {
-                "label": "canvas/Draw",
-                "x": 1332,
-                "y": 504,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "dom/GetElement_k4he7": {
-            "component": "dom/GetElement",
-            "metadata": {
-                "label": "dom/GetElement",
-                "x": 1332,
-                "y": 396,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "canvas/DrawImage_3ctrq": {
-            "component": "canvas/DrawImage",
-            "metadata": {
-                "label": "canvas/DrawImage",
-                "x": 1188,
-                "y": 504,
                 "width": 72,
                 "height": 72
             }
@@ -452,32 +464,6 @@
             }
         },
         {
-            "src": {
-                "process": "dom/GetElement_k4he7",
-                "port": "element"
-            },
-            "tgt": {
-                "process": "canvas/Draw_srboq",
-                "port": "canvas"
-            },
-            "metadata": {
-                "route": 3
-            }
-        },
-        {
-            "src": {
-                "process": "canvas/DrawImage_3ctrq",
-                "port": "drawimage"
-            },
-            "tgt": {
-                "process": "canvas/Draw_srboq",
-                "port": "commands"
-            },
-            "metadata": {
-                "route": 5
-            }
-        },
-        {
             "data": "dragover",
             "tgt": {
                 "process": "ListenDragOver",
@@ -587,30 +573,6 @@
             "tgt": {
                 "process": "canvas/MakeRange_7251d",
                 "port": "from"
-            }
-        },
-        {
-            "data": {
-                "x": 0,
-                "y": 0
-            },
-            "tgt": {
-                "process": "canvas/DrawImage_3ctrq",
-                "port": "destpoint"
-            }
-        },
-        {
-            "data": true,
-            "tgt": {
-                "process": "canvas/Draw_srboq",
-                "port": "drawevery"
-            }
-        },
-        {
-            "data": "#img",
-            "tgt": {
-                "process": "dom/GetElement_k4he7",
-                "port": "selector"
             }
         },
         {
